@@ -36,7 +36,9 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String view = "/WEB-INF/views/login1.jsp";  // intentionally wrong
+        String view = "/WEB-INF/views/login.jsp";  // intentionally wrong
+        String name= request.getParameter("name");
+        request.setAttribute("name",name);
 
         if (getServletContext().getResource(view) == null) {
             getServletContext().log("Missing JSP: " + view);
@@ -49,7 +51,8 @@ public class LoginServlet extends HttpServlet {
             throw new ServletException("View not found: " + view);
         }
 
-		request.getRequestDispatcher("/WEB-INF/views/login1.jsp").forward(request, response);
+        System.out.println(request.getParameter("name"));
+		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 
 	}
 

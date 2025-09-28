@@ -6,8 +6,8 @@
 </head>
 <body>
 My First JSP!!! ${name} Bro
-<form action="/login.do" method="post">
- name: <input type="text" name="name"/> <input type="submit" value="login"/>
+<form action="/login.do">
+ name: <input type="text"/> <input type="submit"/>
 </form>
 </body>
 </html>
